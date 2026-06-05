@@ -1,0 +1,16 @@
+ Student Database Manager (CLI)
+A lightweight Python command-line utility for managing student records. 
+This project creates a local SQLite database, sets up a relational table with automated primary keys, and provides a continuous loop interface for dynamic data entry with real-time validation.
+
+🛠️ Features:
+* Automatic Database Setup: Automatically creates a `Students.db` file and table if they do not exist.
+* Continuous Data Entry: Uses a `while` loop to input multiple records in one session without restarting the script.
+* Built-in Validation: Employs `try/except` blocks to handle malformed inputs (e.g., non-numeric data for GPA or Semesters) gracefully without crashing.
+* Graceful Exit: Users can type `exit` at any prompt to safely stop data entry and commit pending changes to the disk.
+
+🤝 AI Attribution & Collaboration:
+This project was built by me with targeted technical assistance from Gemini. 
+In the spirit of open-source transparency, here is exactly how AI collaboration was utilized during development:
+ * Used Gemini for Syntax Correction: Fixed a specific SQLite positional placeholder spacing issue where `: Name` was failing, correcting it to the tightly bound `:Name` syntax.
+ * Used Gemini for Edge-Case Catching: Identified and fixed a typo in the string checking logic (`CGPA.lower` instead of `CGPA.lower()`).
+ * Used Gemini for Scope & Architecture Refactoring: Helped re-organize the indentation of the `while` loop inside the database context manager (`with sqlite3.connect(...) as pointer:`) to ensure data execution and commits happen before the connection automatically closes.
