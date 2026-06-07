@@ -47,7 +47,7 @@ try:
             }
             pointer.execute(insert_Student_Data, multiple_records)
         except ValueError:
-                print("\n❌ Error: ID and Semester must be integers, and CGPA must be a decimal number. Please try again this record.\n")
+                print("\nError: ID and Semester must be integers, and CGPA must be a decimal number. Please try again this record.\n")
                 continue
     pointer.commit() # Commits changes
 
